@@ -1,0 +1,38 @@
+services:
+  admin_db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ace_admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ace_admin_db
+    volumes:
+      - ace_admin_db_data:/var/lib/postgresql/data
+    ports:
+      - "5436:5432" # host 5436 -> avoids clashing with the 5435 already used by pillpoints_db
+
+  admin_backend:
+    build: ./backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - admin_db
+    volumes:
+      - ./backend/uploads:/app/uploads
+    ports:
+      - "8030:8030"
+
+  admin_frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ${ADMIN_API_PUBLIC_URL:-http://localhost:8030}
+    restart: unless-stopped
+    ports:
+      - "5180:80"
+    depends_on:
+      - admin_backend
+
+volumes:
+  ace_admin_db_data:

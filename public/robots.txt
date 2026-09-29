@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ace-preview.duckdns.org/sitemap.xml

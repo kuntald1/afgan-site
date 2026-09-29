@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Site-wide fallback SEO tags. Individual pages override title/
+         description/OG tags at runtime via src/hooks/useSeo.ts — these are
+         what non-JS crawlers and link-unfurlers see, and what shows before
+         the app hydrates. -->
+    <meta name="description" content="Afghanistan Center for Excellence (ACE) is an Afghan-owned professional services company supporting national and international stakeholders across assessment, transformation, workforce empowerment, and regulatory compliance since 2012." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ace-preview.duckdns.org/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Afghanistan Center for Excellence" />
+    <meta property="og:title" content="Afghanistan Center for Excellence" />
+    <meta property="og:description" content="A local partner turning local challenges into lasting local solutions, in Afghanistan since 2012." />
+    <meta property="og:url" content="https://ace-preview.duckdns.org/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Urbanist:wght@500;600;700&display=swap" rel="stylesheet" />
+    <title>Afghanistan Center for Excellence</title>
+
+    <!-- Organization structured data, for rich results in search -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Afghanistan Center for Excellence",
+        "alternateName": "ACE",
+        "url": "https://ace-preview.duckdns.org/",
+        "foundingDate": "2012",
+        "areaServed": "Afghanistan",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kabul",
+          "addressCountry": "AF"
+        },
+        "sameAs": [
+          "https://www.facebook.com/ace786.af/",
+          "https://www.linkedin.com/company/afghanistan-center-for-excellence",
+          "https://twitter.com/acekabul"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
